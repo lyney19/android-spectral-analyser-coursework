@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MaterialSpectrumView">
+        <attr name="spectrumColor" format="color"/>
+        <attr name="spectrumGridColor" format="color"/>
+        <attr name="spectrumAxisColor" format="color"/>
+        <attr name="spectrumTextColor" format="color"/>
+        <attr name="spectrumCardColor" format="color"/>
+        <attr name="spectrumBorderColor" format="color"/>
+        <attr name="spectrumStrokeWidth" format="dimension"/>
+        <attr name="spectrumLabelTextSize" format="dimension"/>
+        <attr name="spectrumCornerRadius" format="dimension"/>
+        <attr name="spectrumSampleRate" format="float"/>
+        <attr name="spectrumFrameSize" format="integer"/>
+        <attr name="spectrumShowGrid" format="boolean"/>
+        <attr name="spectrumShowXAxisLabels" format="boolean"/>
+        <attr name="spectrumShowCenterLine" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="SpectrogramView">
+        <attr name="spectrogramBackgroundColor" format="color"/>
+        <attr name="spectrogramAxisColor" format="color"/>
+        <attr name="spectrogramTextColor" format="color"/>
+        <attr name="spectrogramGridColor" format="color"/>
+        <attr name="spectrogramButtonIconTint" format="color"/>
+        <attr name="spectrogramButtonBackgroundColor" format="color"/>
+
+        <attr name="spectrogramAxisStrokeWidth" format="dimension"/>
+        <attr name="spectrogramGridStrokeWidth" format="dimension"/>
+        <attr name="spectrogramTextSize" format="dimension"/>
+
+        <attr name="spectrogramButtonSize" format="dimension"/>
+        <attr name="spectrogramButtonCornerRadius" format="dimension"/>
+        <attr name="spectrogramButtonMargin" format="dimension"/>
+
+        <attr name="spectrogramLeftPadding" format="dimension"/>
+        <attr name="spectrogramRightPadding" format="dimension"/>
+        <attr name="spectrogramTopPadding" format="dimension"/>
+        <attr name="spectrogramBottomPadding" format="dimension"/>
+        <attr name="spectrogramFrequencyLabelPadding" format="dimension"/>
+
+        <attr name="spectrogramMinDb" format="float"/>
+        <attr name="spectrogramMaxDb" format="float"/>
+        <attr name="spectrogramMinScaleY" format="float"/>
+        <attr name="spectrogramMaxScaleY" format="float"/>
+
+        <attr name="spectrogramVisualBins" format="integer"/>
+
+        <attr name="spectrogramShowGrid" format="boolean"/>
+        <attr name="spectrogramShowTimeAxis" format="boolean"/>
+        <attr name="spectrogramShowFrequencyAxis" format="boolean"/>
+        <attr name="spectrogramInteractionEnabled" format="boolean"/>
+        <attr name="spectrogramDynamicFrequencyAxis" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="SpectrogramLegendView">
+        <attr name="legendTitle" format="string" />
+
+        <attr name="minLabel" format="string" />
+        <attr name="maxLabel" format="string" />
+
+        <attr name="legendCornerRadius" format="dimension" />
+        <attr name="legendBarHeight" format="dimension" />
+
+        <attr name="legendTextColor" format="color" />
+        <attr name="legendTitleColor" format="color" />
+
+        <attr name="legendBorderColor" format="color" />
+        <attr name="legendBorderWidth" format="dimension" />
+    </declare-styleable>
+
+</resources>

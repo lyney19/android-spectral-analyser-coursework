@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Title">
+        <item name="android:textSize">@dimen/text_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Subtitle">
+        <item name="android:textSize">@dimen/text_subtitle</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="TextBody">
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextWeak">
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/text_weak</item>
+    </style>
+
+    <style name="PrimaryButton"
+        parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/primary</item>
+        <item name="android:textColor">@color/bg_primary</item>
+        <item name="cornerRadius">@dimen/radius_medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+    </style>
+
+    <style name="SecondaryButton" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/border</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="cornerRadius">@dimen/radius_medium</item>
+    </style>
+
+    <style name="RoundedSecondaryButton" parent="SecondaryButton">
+        <item name="strokeColor">@color/border</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cornerRadius">@dimen/radius_ultra_large</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="rippleColor">?attr/colorControlHighlight</item>
+    </style>
+
+    <style name="BottomButton" parent="PrimaryButton">
+        <item name="cornerRadius">28dp</item>
+        <item name="android:minHeight">44dp</item>
+    </style>
+
+    <style name="TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/bg_secondary</item>
+        <item name="boxStrokeColor">@color/border</item>
+        <item name="hintTextColor">@color/text_weak</item>
+        <item name="android:textColorHint">@color/text_weak</item>
+        <item name="boxCornerRadiusTopStart">@dimen/radius_medium</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/radius_medium</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/radius_medium</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/radius_medium</item>
+    </style>
+
+    <style name="EditText" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHighlight">@color/primary_muted</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_primary</item>
+        <item name="android:textColorHint">@color/text_weak</item>
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+    </style>
+
+    <style name="Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/bg_secondary</item>
+        <item name="strokeColor">@color/border</item>
+        <item name="strokeWidth">@dimen/stroke_small</item>
+        <item name="cardCornerRadius">@dimen/radius_large</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <style name="Container">
+        <item name="android:padding">@dimen/padding_large</item>
+        <item name="android:background">@color/bg_primary</item>
+    </style>
+
+    <style name="BottomNavIndicator">
+        <item name="android:color">@color/primary_muted</item>
+    </style>
+
+    <style name="SpectrumView">
+        <item name="spectrumColor">@color/primary</item>
+        <item name="spectrumGridColor">@color/grid</item>
+        <item name="spectrumAxisColor">@color/border</item>
+        <item name="spectrumTextColor">@color/text_secondary</item>
+        <item name="spectrumCardColor">@color/bg_secondary</item>
+        <item name="spectrumBorderColor">@color/border</item>
+        <item name="spectrumStrokeWidth">@dimen/stroke_medium</item>
+        <item name="spectrumLabelTextSize">@dimen/text_small</item>
+        <item name="spectrumCornerRadius">@dimen/radius_large</item>
+        <item name="spectrumShowGrid">true</item>
+        <item name="spectrumShowXAxisLabels">true</item>
+        <item name="spectrumShowCenterLine">true</item>
+        <item name="borderWidth">@dimen/stroke_medium</item>
+    </style>
+
+    <style name="SpectrogramView">
+        <item name="spectrogramBackgroundColor">@color/bg_secondary</item>
+        <item name="spectrogramGridColor">@color/grid</item>
+        <item name="spectrogramAxisColor">@color/border</item>
+        <item name="spectrogramTextColor">@color/text_secondary</item>
+        <item name="spectrogramAxisStrokeWidth">1dp</item>
+        <item name="spectrogramGridStrokeWidth">0.6dp</item>
+        <item name="spectrogramTextSize">@dimen/text_small</item>
+        <item name="spectrogramLeftPadding">52dp</item>
+        <item name="spectrogramRightPadding">@dimen/padding_large</item>
+        <item name="spectrogramTopPadding">@dimen/padding_medium</item>
+        <item name="spectrogramBottomPadding">42dp</item>
+        <item name="spectrogramShowGrid">true</item>
+        <item name="spectrogramShowTimeAxis">true</item>
+        <item name="spectrogramShowFrequencyAxis">true</item>
+        <item name="spectrogramButtonBackgroundColor">@color/border</item>
+        <item name="spectrogramButtonIconTint">@color/text_primary</item>
+        <item name="spectrogramButtonCornerRadius">@dimen/radius_medium</item>
+        <item name="spectrogramButtonSize">40dp</item>
+        <item name="spectrogramButtonMargin">@dimen/margin_small</item>
+    </style>
+
+    <style name="SpectrogramLegend">
+        <item name="legendTextColor">@color/text_secondary</item>
+        <item name="legendTitleColor">@color/text_primary</item>
+        <item name="legendBorderColor">@color/border</item>
+        <item name="legendBorderWidth">@dimen/stroke_medium</item>
+        <item name="legendCornerRadius">@dimen/radius_large</item>
+        <item name="legendBarHeight">18dp</item>
+    </style>
+
+    <style name="SliderLabel" parent="Widget.Material3.Tooltip">
+        <item name="backgroundTint">@color/bg_secondary</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="cornerRadius">@dimen/radius_medium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Slider" parent="Widget.Material3.Slider">
+        <item name="trackColorActive">@color/primary</item>
+        <item name="trackColorInactive">@color/border</item>
+        <item name="trackHeight">4dp</item>
+        <item name="thumbColor">@color/primary</item>
+        <item name="thumbRadius">@dimen/radius_small</item>
+        <item name="haloColor">@color/primary_muted</item>
+        <item name="tickColorActive">@color/primary</item>
+        <item name="tickColorInactive">@color/border</item>
+        <item name="labelBehavior">floating</item>
+        <item name="labelStyle">@style/SliderLabel</item>
+    </style>
+
+    <style name="Checkbox" parent="Widget.Material3.CompoundButton.CheckBox">
+        <item name="buttonTint">@color/primary</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:colorControlHighlight">@color/primary_muted</item>
+    </style>
+
+    <style name="DropdownSelector"
+        parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxBackgroundColor">@color/bg_secondary</item>
+        <item name="boxStrokeColor">@color/border</item>
+        <item name="hintTextColor">@color/text_weak</item>
+        <item name="android:textColorHint">@color/text_weak</item>
+        <item name="boxCornerRadiusTopStart">@dimen/radius_medium</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/radius_medium</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/radius_medium</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/radius_medium</item>
+        <item name="endIconTint">@color/text_secondary</item>
+        <item name="android:popupBackground">@drawable/dropdown_popup_bg</item>
+    </style>
+
+    <style name="DropdownText">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:paddingStart">@dimen/padding_medium</item>
+        <item name="android:paddingEnd">@dimen/padding_medium</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:dropDownVerticalOffset">4dp</item>
+        <item name="android:dropDownHorizontalOffset">0dp</item>
+        <item name="android:popupBackground">@drawable/dropdown_popup_bg</item>
+        <item name="android:inputType">none</item>
+        <item name="android:focusable">false</item>
+    </style>
+
+</resources>

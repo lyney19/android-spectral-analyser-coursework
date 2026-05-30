@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mirea.kt.ribo.notescope.viewmodel.SpectrumViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingBottom="80dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_medium">
+
+            <TextView
+                style="@style/Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_large"
+                android:text="@string/spectral_analysis_settings" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_medium">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_medium">
+
+                    <TextView
+                        style="@style/Subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_large"
+                        android:text="@string/processing" />
+
+                    <TextView
+                        style="@style/TextBody"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_rate" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/DropdownSelector"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/dropdownSampleRate"
+                            style="@style/DropdownText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_small" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        style="@style/TextWeak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        android:text="@{viewModel.nyquistFrequency}" />
+
+                    <TextView
+                        style="@style/TextBody"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fft_size" />
+
+                    <com.google.android.material.slider.Slider
+                        style="@style/Slider"
+                        app:sliderMode="@{com.mirea.kt.ribo.notescope.bindings.SliderMode.FFT_SIZE}"
+                        app:onValueChanged="@{(value, fromUser) -> viewModel.onFftSizeSlide(value)}"
+                        app:value="@{viewModel.fftSizeSliderPosition}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:stepSize="1"
+                        android:valueFrom="0"
+                        android:valueTo="6" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextWeak"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_small"
+                            android:layout_weight="1"
+                            android:gravity="start"
+                            android:text="@string/min_fft_size" />
+
+                        <TextView
+                            style="@style/TextWeak"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/mid_fft_size" />
+
+                        <TextView
+                            style="@style/TextWeak"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_small"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="@string/max_fft_size" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/TextWeak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        android:text="@{viewModel.windowTemporalPrams}" />
+
+                    <CheckBox
+                        style="@style/Checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/allow_custom_fft_size"
+                        android:checked="@{viewModel.allowCustomFftSize}"
+                        app:checkedChanged="@{checked -> viewModel.onAllowCustomFftSizeChecked(checked)}"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/custom_fft_size">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:enabled="@{viewModel.allowCustomFftSize}"
+                            android:text="@{viewModel.uiCustomFftSize}"
+                            app:textChanged="@{text -> viewModel.onUiCustomFftSizeChanged(text)}"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        style="@style/TextWeak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        android:text="@string/fft_power_of_two_warning"
+                        android:textColor="@color/warning" />
+
+                    <TextView
+                        style="@style/TextBody"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/overlap" />
+
+                    <com.google.android.material.slider.Slider
+                        style="@style/Slider"
+                        app:sliderMode="@{com.mirea.kt.ribo.notescope.bindings.SliderMode.OVERLAP}"
+                        app:onValueChanged="@{(value, fromUser) -> viewModel.onOverlapSlide(value)}"
+                        app:value="@{viewModel.overlapSliderPosition}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:stepSize="1"
+                        android:valueFrom="0"
+                        android:valueTo="4" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextWeak"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_small"
+                            android:layout_weight="1"
+                            android:gravity="start"
+                            android:text="0%" />
+
+                        <TextView
+                            style="@style/TextWeak"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="start"
+                            android:text="25%" />
+
+                        <TextView
+                            style="@style/TextWeak"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="50%" />
+
+                        <TextView
+                            style="@style/TextWeak"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="75%" />
+
+                        <TextView
+                            style="@style/TextWeak"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_small"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="87.5%" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/TextWeak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:text="@{viewModel.temporalResolution}" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_medium">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_medium">
+
+                    <TextView
+                        style="@style/Subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_large"
+                        android:text="@string/visualization" />
+
+                    <TextView
+                        style="@style/TextBody"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/spectrogram_length" />
+
+                    <com.google.android.material.slider.Slider
+                        style="@style/Slider"
+                        app:sliderMode="@{com.mirea.kt.ribo.notescope.bindings.SliderMode.SPECTROGRAM_LENGTH}"
+                        app:onValueChanged="@{(value, fromUser) -> viewModel.onHistoryInSecSlide(value)}"
+                        app:value="@{viewModel.historyInSecSliderPosition}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:stepSize="1"
+                        android:valueFrom="0"
+                        android:valueTo="6" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextWeak"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_small"
+                            android:layout_weight="1"
+                            android:gravity="start"
+                            android:text="@string/min_spectrogram_duration" />
+
+                        <TextView
+                            style="@style/TextWeak"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/mid_spectrogram_duration" />
+
+                        <TextView
+                            style="@style/TextWeak"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_small"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="@string/max_spectrogram_duration" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/TextWeak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        android:text="@{viewModel.memoryUsage}" />
+
+                    <TextView
+                        style="@style/TextBody"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/window_function" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/DropdownSelector"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            style="@style/DropdownText"
+                            android:id="@+id/dropdownWindowFunction"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_small" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/SecondaryButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/restore_defaults"
+                    android:onClick="@{() -> viewModel.onResetConfig()}"/>
+
+                <Space
+                    android:layout_width="12dp"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/PrimaryButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/apply"
+                    android:onClick="@{() -> viewModel.onApplySettings()}"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

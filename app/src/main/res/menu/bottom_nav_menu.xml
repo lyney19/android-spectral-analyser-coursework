@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/nav_live"
+        android:title="@string/live"
+        android:icon="@drawable/ic_action_spectrum_graph" />
+
+    <item android:id="@+id/nav_history"
+        android:title="@string/history"
+        android:icon="@drawable/ic_action_bitmap" />
+
+    <item android:id="@+id/nav_settings"
+        android:title="@string/settings"
+        android:icon="@drawable/ic_action_settings" />
+
+</menu>

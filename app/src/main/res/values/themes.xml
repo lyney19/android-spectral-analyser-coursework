@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.MyApplication" parent="Theme.Material3.Dark.NoActionBar">
+
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryContainer">@color/primary_muted</item>
+
+        <item name="colorSecondary">@color/primary</item>
+        <item name="colorSecondaryContainer">@color/primary_muted</item>
+
+        <item name="colorTertiary">@color/primary_bright</item>
+
+        <item name="android:windowBackground">@color/bg_primary</item>
+
+        <item name="colorSurface">@color/bg_secondary</item>
+
+        <item name="colorOnSurface">@color/text_primary</item>
+
+    </style>
+
+</resources>

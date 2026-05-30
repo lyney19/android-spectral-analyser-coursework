@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="radius_small">8dp</dimen>
+    <dimen name="radius_medium">14dp</dimen>
+    <dimen name="radius_large">20dp</dimen>
+    <dimen name="radius_ultra_large">28dp</dimen>
+
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+
+    <dimen name="text_ultra_small">12sp</dimen>
+    <dimen name="text_small">14sp</dimen>
+    <dimen name="text_body">16sp</dimen>
+    <dimen name="text_subtitle">18sp</dimen>
+    <dimen name="text_title">28sp</dimen>
+
+    <dimen name="button_height">52dp</dimen>
+    <dimen name="input_height">56dp</dimen>
+
+    <dimen name="stroke_small">1dp</dimen>
+    <dimen name="stroke_medium">2dp</dimen>
+</resources>
