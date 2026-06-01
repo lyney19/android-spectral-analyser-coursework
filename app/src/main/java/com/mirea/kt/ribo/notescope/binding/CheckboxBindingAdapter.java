@@ -1,10 +1,10 @@
-package com.mirea.kt.ribo.notescope.bindings;
+package com.mirea.kt.ribo.notescope.binding;
 
 import android.widget.CheckBox;
 
 import androidx.databinding.BindingAdapter;
 
-import com.mirea.kt.ribo.notescope.bindings.listener.CheckboxChanged;
+import com.mirea.kt.ribo.notescope.binding.listener.CheckboxChanged;
 
 public class CheckboxBindingAdapter {
 

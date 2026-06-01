@@ -2,6 +2,7 @@ package com.mirea.kt.ribo.notescope.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -26,8 +27,9 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         EdgeToEdge.enable(this);
+
+        Log.i("LOGIN_ACTIVITY", "LoginActivity created");
 
         binding = DataBindingUtil.setContentView(
                 this,
@@ -64,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             if (state instanceof LoginUiState.NetworkError error) {
-                Toast.makeText(this, error.message(), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getString(error.messageId()), Toast.LENGTH_LONG).show();
             }
 
             if (state instanceof LoginUiState.InputError error) {

@@ -1,4 +1,4 @@
-package com.mirea.kt.ribo.notescope.bindings;
+package com.mirea.kt.ribo.notescope.binding;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -6,7 +6,7 @@ import android.widget.EditText;
 
 import androidx.databinding.BindingAdapter;
 
-import com.mirea.kt.ribo.notescope.bindings.listener.TextChanged;
+import com.mirea.kt.ribo.notescope.binding.listener.TextChanged;
 
 public class TextBindingAdapter {
     @BindingAdapter("textChanged")

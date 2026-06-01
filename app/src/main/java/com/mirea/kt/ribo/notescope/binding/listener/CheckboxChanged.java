@@ -1,4 +1,4 @@
-package com.mirea.kt.ribo.notescope.bindings.listener;
+package com.mirea.kt.ribo.notescope.binding.listener;
 
 @FunctionalInterface
 public interface CheckboxChanged {

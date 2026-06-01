@@ -10,8 +10,12 @@ import com.mirea.kt.ribo.notescope.R;
 import com.mirea.kt.ribo.notescope.model.Task;
 import com.mirea.kt.ribo.notescope.network.LoginApiClient;
 import com.mirea.kt.ribo.notescope.network.callback.ResponseCallback;
+import com.mirea.kt.ribo.notescope.network.exception.ApiException;
 import com.mirea.kt.ribo.notescope.network.model.ApiResponse;
 import com.mirea.kt.ribo.notescope.ui.state.login.LoginUiState;
+
+import java.net.SocketTimeoutException;
+import java.net.UnknownHostException;
 
 public class LoginViewModel extends ViewModel {
     private final MutableLiveData<String> username = new MutableLiveData<>("");
@@ -75,9 +79,24 @@ public class LoginViewModel extends ViewModel {
 
                     @Override
                     public void onError(Throwable error) {
-                        loginState.postValue(
-                                new LoginUiState.NetworkError(error.getMessage())
-                        );
+                        if (error instanceof UnknownHostException) {
+                            loginState.postValue(
+                                    new LoginUiState.NetworkError(R.string.unknown_host_exception)
+                            );
+                        } else if (error instanceof SocketTimeoutException) {
+                            loginState.postValue(
+                                    new LoginUiState.NetworkError(R.string.socket_timeout_exception)
+                            );
+                        } else if (error instanceof ApiException) {
+                            loginState.postValue(
+                                    new LoginUiState.NetworkError(R.string.api_exception)
+                            );
+                        } else {
+                            Log.w("LOGIN_VIEW_MODEL", String.valueOf(error));
+                            loginState.postValue(
+                                    new LoginUiState.NetworkError(R.string.unknown_network_exception)
+                            );
+                        }
                     }
                 }
         );

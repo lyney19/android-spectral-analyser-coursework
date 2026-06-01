@@ -10,5 +10,5 @@ public sealed interface LoginUiState {
 
     record InputError(int messageId) implements LoginUiState {}
 
-    record NetworkError(String message) implements LoginUiState {}
+    record NetworkError(int messageId) implements LoginUiState {}
 }

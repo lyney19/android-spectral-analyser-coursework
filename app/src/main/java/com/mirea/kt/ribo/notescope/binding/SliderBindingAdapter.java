@@ -1,9 +1,9 @@
-package com.mirea.kt.ribo.notescope.bindings;
+package com.mirea.kt.ribo.notescope.binding;
 
 import androidx.databinding.BindingAdapter;
 
 import com.google.android.material.slider.Slider;
-import com.mirea.kt.ribo.notescope.bindings.listener.SliderChanged;
+import com.mirea.kt.ribo.notescope.binding.listener.SliderChanged;
 
 public class SliderBindingAdapter {
     @BindingAdapter("sliderMode")

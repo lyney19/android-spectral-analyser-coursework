@@ -1,6 +1,7 @@
 package com.mirea.kt.ribo.notescope.ui.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -28,8 +29,9 @@ public class SpectrumActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         EdgeToEdge.enable(this);
+
+        Log.i("SPECTRUM_ACTIVITY", "SpectrumActivity created");
 
         setContentView(R.layout.activity_spectrum);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);

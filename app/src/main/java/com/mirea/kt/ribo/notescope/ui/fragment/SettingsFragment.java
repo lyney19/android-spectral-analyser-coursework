@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +47,8 @@ public class SettingsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        Log.i("SETTINGS_FRAGMENT", "SettingsFragment created");
 
         viewModel = new ViewModelProvider(requireActivity()).get(SpectrumViewModel.class);
 
@@ -94,9 +97,9 @@ public class SettingsFragment extends Fragment {
     private void observeViewModel() {
         viewModel.getAvailableSampleRate().observe(
                 getViewLifecycleOwner(),
-                availbaleSampleRate -> {
+                availableSampleRate -> {
                     sampleRateAdapter.clear();
-                    sampleRateAdapter.addAll(availbaleSampleRate);
+                    sampleRateAdapter.addAll(availableSampleRate);
                     sampleRateAdapter.notifyDataSetChanged();
                 }
         );
@@ -131,5 +134,7 @@ public class SettingsFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+
+        Log.i("SETTINGS_FRAGMENT", "SettingsFragment destroyed");
     }
 }

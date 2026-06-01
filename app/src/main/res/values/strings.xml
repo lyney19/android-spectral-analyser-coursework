@@ -39,4 +39,8 @@
     <string name="min_spectrogram_duration">1s</string>
     <string name="mid_spectrogram_duration">15s</string>
     <string name="max_spectrogram_duration">30s</string>
+    <string name="unknown_host_exception">No internet connection.</string>
+    <string name="socket_timeout_exception">Timeout.</string>
+    <string name="api_exception">Invalid Username or Password.</string>
+    <string name="unknown_network_exception">Network error. See the Logcat for more info.</string>
 </resources>

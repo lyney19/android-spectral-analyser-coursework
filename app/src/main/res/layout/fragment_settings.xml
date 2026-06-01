@@ -83,7 +83,7 @@
 
                     <com.google.android.material.slider.Slider
                         style="@style/Slider"
-                        app:sliderMode="@{com.mirea.kt.ribo.notescope.bindings.SliderMode.FFT_SIZE}"
+                        app:sliderMode="@{com.mirea.kt.ribo.notescope.binding.SliderMode.FFT_SIZE}"
                         app:onValueChanged="@{(value, fromUser) -> viewModel.onFftSizeSlide(value)}"
                         app:value="@{viewModel.fftSizeSliderPosition}"
                         android:layout_width="match_parent"
@@ -173,7 +173,7 @@
 
                     <com.google.android.material.slider.Slider
                         style="@style/Slider"
-                        app:sliderMode="@{com.mirea.kt.ribo.notescope.bindings.SliderMode.OVERLAP}"
+                        app:sliderMode="@{com.mirea.kt.ribo.notescope.binding.SliderMode.OVERLAP}"
                         app:onValueChanged="@{(value, fromUser) -> viewModel.onOverlapSlide(value)}"
                         app:value="@{viewModel.overlapSliderPosition}"
                         android:layout_width="match_parent"
@@ -269,7 +269,7 @@
 
                     <com.google.android.material.slider.Slider
                         style="@style/Slider"
-                        app:sliderMode="@{com.mirea.kt.ribo.notescope.bindings.SliderMode.SPECTROGRAM_LENGTH}"
+                        app:sliderMode="@{com.mirea.kt.ribo.notescope.binding.SliderMode.SPECTROGRAM_LENGTH}"
                         app:onValueChanged="@{(value, fromUser) -> viewModel.onHistoryInSecSlide(value)}"
                         app:value="@{viewModel.historyInSecSliderPosition}"
                         android:layout_width="match_parent"

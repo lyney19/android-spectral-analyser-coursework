@@ -5,6 +5,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,10 +25,10 @@ public class TaskInfoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         EdgeToEdge.enable(this);
-
         setContentView(R.layout.activity_task_info);
+
+        Log.i("TASK_INFO_ACTIVITY", "TaskInfoActivity created");
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -41,9 +42,13 @@ public class TaskInfoActivity extends AppCompatActivity {
         TextView variant = findViewById(R.id.tvVariant);
         TextView description = findViewById(R.id.tvDescription);
 
-        title.setText(task.title());
-        variant.setText(String.format(getString(R.string.variant), task.variant()));
-        description.setText(task.task());
+        if (task != null) {
+            title.setText(task.title());
+            variant.setText(String.format(getString(R.string.variant), task.variant()));
+            description.setText(task.task());
+        } else {
+            Log.w("TASK_INFO_ACTIVITY", "for some reason task is null");
+        }
 
         findViewById(R.id.btnCopy).setOnClickListener(view -> {
             var clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);

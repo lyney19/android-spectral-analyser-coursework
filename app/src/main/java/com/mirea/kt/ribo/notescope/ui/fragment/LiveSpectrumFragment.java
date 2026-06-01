@@ -1,6 +1,7 @@
 package com.mirea.kt.ribo.notescope.ui.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,9 +38,9 @@ public class LiveSpectrumFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
         super.onViewCreated(view, savedInstanceState);
 
+        Log.i("LIVE_SPECTRUM_FRAGMENT", "LiveSpectrumFragment created");
 
         viewModel = new ViewModelProvider(requireActivity()).get(SpectrumViewModel.class);
 
@@ -64,5 +65,7 @@ public class LiveSpectrumFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+
+        Log.i("LIVE_SPECTRUM_FRAGMENT", "LiveSpectrumFragment destroyed");
     }
 }

@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,9 @@ public class HistorySpectrumFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        Log.i("HISTORY_SPECTRUM_FRAGMENT", "HistorySpectrumFragment created");
+
         viewModel = new ViewModelProvider(requireActivity()).get(SpectrumViewModel.class);
 
         permissionHelper = new PermissionHelper();
@@ -73,6 +77,8 @@ public class HistorySpectrumFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+
+        Log.i("HISTORY_SPECTRUM_FRAGMENT", "HistorySpectrumFragment destroyed");
     }
 
 }

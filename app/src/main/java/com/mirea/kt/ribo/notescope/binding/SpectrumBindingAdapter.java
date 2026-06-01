@@ -1,4 +1,4 @@
-package com.mirea.kt.ribo.notescope.bindings;
+package com.mirea.kt.ribo.notescope.binding;
 
 import androidx.databinding.BindingAdapter;
 
