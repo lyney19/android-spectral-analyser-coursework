@@ -63,7 +63,7 @@ To achieve smooth real-time rendering:
 
 | Spectrum                                          | Spectrogram                                          | Settings                                          |
 |---------------------------------------------------|------------------------------------------------------|---------------------------------------------------|
-| <img src="screenshots/spectrum.png" width="250"/> | <img src="screenshots/spectrogram.png" width="250"/> | <img src="screenshots/settings.png" width="250"/> |
+| <img src="images/spectrum.png" width="300"/> | <img src="images/spectrogram.png" width="300"/> | <img src="images/settings.png" width="300"/> |
 
 ## 📥 Installation & Run
 
