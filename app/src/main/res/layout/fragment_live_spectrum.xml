@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.mirea.kt.ribo.notescope.viewmodel.SpectrumViewModel" />
+            type="io.lyney.notescope.viewmodel.SpectrumViewModel" />
 
     </data>
 
@@ -16,7 +16,7 @@
         android:layout_height="match_parent"
         android:background="@color/bg_primary">
 
-        <com.mirea.kt.ribo.notescope.ui.view.MaterialSpectrumView
+        <io.lyney.notescope.ui.view.MaterialSpectrumView
             android:id="@+id/fftView"
             style="@style/SpectrumView"
             android:layout_width="0dp"

@@ -20,7 +20,7 @@
         android:layout_gravity="bottom"
         android:layout_marginHorizontal="@dimen/margin_medium"
         android:layout_marginBottom="@dimen/margin_small"
-        app:cardCornerRadius="@dimen/radius_large">
+        app:cardCornerRadius="@dimen/radius_ultra_large">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"

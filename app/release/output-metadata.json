@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.mirea.kt.ribo.notescope",
+  "applicationId": "io.lyney.notescope",
   "variantName": "release",
   "elements": [
     {

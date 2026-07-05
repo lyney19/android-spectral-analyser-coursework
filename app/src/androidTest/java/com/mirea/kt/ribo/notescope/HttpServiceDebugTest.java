@@ -1,14 +1,14 @@
-package com.mirea.kt.ribo.notescope;
+package io.lyney.notescope;
 
 import android.util.Log;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
-import com.mirea.kt.ribo.notescope.network.HttpMethod;
-import com.mirea.kt.ribo.notescope.network.HttpService;
-import com.mirea.kt.ribo.notescope.network.body.ContentType;
-import com.mirea.kt.ribo.notescope.network.model.ApiBody;
-import com.mirea.kt.ribo.notescope.network.model.TaskResponse;
+import io.lyney.notescope.network.HttpMethod;
+import io.lyney.notescope.network.HttpService;
+import io.lyney.notescope.network.body.ContentType;
+import io.lyney.notescope.network.model.ApiBody;
+import io.lyney.notescope.network.model.TaskResponse;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

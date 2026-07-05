@@ -1,7 +1,7 @@
-package com.mirea.kt.ribo.notescope;
+package io.lyney.notescope;
 
-import com.mirea.kt.ribo.notescope.audio.dsp.SpectrumAnalyser;
-import com.mirea.kt.ribo.notescope.audio.dsp.SpectrumProcessor;
+import io.lyney.notescope.audio.dsp.SpectrumAnalyser;
+import io.lyney.notescope.audio.dsp.SpectrumProcessor;
 
 import org.junit.Test;
 import org.knowm.xchart.BitmapEncoder;
@@ -125,15 +125,18 @@ public class SpectrumProcessorVisualizationTest {
 
     void runTest(String filename, SignalGenerator generator) {
 
-        var processor = new SpectrumProcessor(frameSize);
-        var analyser = new SpectrumAnalyser(frameSize, spectrum -> {
-            try {
-                var processed = processor.process(spectrum);
-                createGraphic(processed, filename);
-            } catch (Exception e) {
-                throw new AssertionError(e);
-            }
-        });
+        var processor = new SpectrumProcessor(frameSize, frameSize / 4);
+        var analyser = new SpectrumAnalyser(
+                frameSize,
+                frameSize / 4,
+                spectrum -> {
+                    try {
+                        var processed = processor.process(spectrum);
+                        createGraphic(processed, filename);
+                    } catch (Exception e) {
+                        throw new AssertionError(e);
+                    }
+                });
 
         var buffer = new short[frameSize];
 

@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.mirea.kt.ribo.notescope.viewmodel.SpectrumViewModel" />
+            type="io.lyney.notescope.viewmodel.SpectrumViewModel" />
 
     </data>
 
@@ -17,7 +17,7 @@
         android:background="@color/bg_primary"
         android:padding="@dimen/padding_medium">
 
-        <com.mirea.kt.ribo.notescope.ui.view.SpectrogramLegendView
+        <io.lyney.notescope.ui.view.SpectrogramLegendView
             android:id="@+id/legendView"
             style="@style/SpectrogramLegend"
             android:layout_width="300dp"
@@ -43,7 +43,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-                <com.mirea.kt.ribo.notescope.ui.view.SpectrogramView
+                <io.lyney.notescope.ui.view.SpectrogramView
                     android:id="@+id/spectrogramView"
                     style="@style/SpectrogramView"
                     android:layout_width="match_parent"

@@ -1,6 +1,6 @@
-package com.mirea.kt.ribo.notescope;
+package io.lyney.notescope;
 
-import com.mirea.kt.ribo.notescope.audio.dsp.SpectrumAnalyser;
+import io.lyney.notescope.audio.dsp.SpectrumAnalyser;
 
 import org.junit.Test;
 import org.knowm.xchart.*;
@@ -125,14 +125,17 @@ public class SpectrumAnalyserVisualizationTest {
             buffer[i] = (short) generator.generate(i);
         }
 
-        var analyser = new SpectrumAnalyser(frameSize, spectrum -> {
-            try {
-                createGraphic(spectrum, filename);
-                System.out.println(Arrays.toString(spectrum));
-            } catch (Exception e) {
-                throw new AssertionError(e);
-            }
-        });
+        var analyser = new SpectrumAnalyser(
+                frameSize,
+                frameSize / 4,
+                spectrum -> {
+                    try {
+                        createGraphic(spectrum, filename);
+                        System.out.println(Arrays.toString(spectrum));
+                    } catch (Exception e) {
+                        throw new AssertionError(e);
+                    }
+                });
 
         analyser.addSamples(buffer);
     }
